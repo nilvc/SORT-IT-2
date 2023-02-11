@@ -91,9 +91,10 @@ export const SortAlgorithms = ({colors}) => {
     }
 
     // sorting algorithms from here 
-    // 1 bubble sort
-    // 2 Insertion sort
-    // 3 quick sort
+    // 1 Bubble sort
+    // 2 Selection sort
+    // 3 Quick sort
+    // 4 Heap sort     
 
     const bubbleSort = async () => {
        
@@ -133,14 +134,14 @@ export const SortAlgorithms = ({colors}) => {
         setIsSorting(false)
     }
     
-    const insertionSort = async () => {
+    const selectionSort = async () => {
 
         if (is_sorting)
         {
             return ;
         }
         setIsSorting(true);
-        setComplexities({algorithm : 'Insertion Sort' ,time_complexity : 'O(n**2)' ,space_complexity : 'O(1)'})
+        setComplexities({algorithm : 'Selection Sort' ,time_complexity : 'O(n**2)' ,space_complexity : 'O(1)'})
         const size = bars.length;
         for (let i=0;i<size;i++)
         {
@@ -321,7 +322,7 @@ export const SortAlgorithms = ({colors}) => {
                 <div className='col-sm-12'>
                     <button className='btn btn-warning btn-sm mx-1' onClick={() => {Generate_Bars(bars.length)}}>Generate new Bars</button>
                     <button className='btn btn-warning btn-sm mx-1' onClick={bubbleSort}>Bubble sort</button>
-                    <button className='btn btn-warning btn-sm mx-1' onClick={insertionSort}>Insertion Sort</button>
+                    <button className='btn btn-warning btn-sm mx-1' onClick={selectionSort}>Selection Sort</button>
                     <button className='btn btn-warning btn-sm mx-1' onClick={doquicksort}>Quick Sort</button>
                     <button className='btn btn-warning btn-sm mx-1' onClick={heapsort}>Heap Sort</button>
                 </div>
@@ -329,4 +330,3 @@ export const SortAlgorithms = ({colors}) => {
         </div>
     )
 }
-
